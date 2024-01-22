@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 10px;
+}
+
+body {
+  min-height: 100vh;
+  padding: 5rem;
+  background: #8a680b;
+ 
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .navbar {
+    display: flex;
+    font-size: 4rem;
+    width: 80%;
+    justify-content: space-between;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    .collapsible-menu {
+        label {
+        cursor: pointer;
+      }
+      input#menu {
+        display: none;
+      }
+      .menu-content {
+        max-height: 0;
+        overflow: hidden;
+      }
+    //   menu displayed when checked
+      input:checked ~ .menu-content {
+        max-height: 100%;
+      }
+    }
+  }
+}
+.top-navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  text-transform: uppercase;
+  li {
+    text-decoration: none;
+    color: black;
+    margin-top: 2rem;
+    font-size: 3rem;
+  }
+  li:nth-of-type(1) {
+    display: none;
+  }
+}
