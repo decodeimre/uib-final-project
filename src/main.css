@@ -16,24 +16,23 @@ body {
 .bg-section-top {
   min-height: 1000px;
   padding: 5rem;
-  background: url(../Images/concert-3084876_1920.jpg);
+  background: linear-gradient(to bottom, rgba(18, 5, 31, 0) 0%, rgba(18, 5, 31, 0.5) 80%, rgb(18, 5, 31) 100%), url(../Images/concert-3084876_1920.jpg);
   background-position: top;
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-section-center {
-  min-height: 2000px;
-  padding: 5rem;
+  padding: 1.8rem;
   background: linear-gradient(180deg, rgb(18, 5, 31) 0%, rgb(255, 249, 233) 100%);
 }
 
 .bg-section-bottom {
-  min-height: 600px;
+  min-height: 800px;
   padding: 5rem;
-  background: url(../Images/29a3ca739f8347de51ca975401451b7a_RYAN8130-814-363-c.jpg);
+  background: linear-gradient(to top, rgba(255, 249, 233, 0) 0%, rgba(255, 249, 233, 0.5) 80%, rgb(255, 249, 233) 100%), url(../Images/29a3ca739f8347de51ca975401451b7a_RYAN8130-814-363-c.jpg);
   background-position: bottom;
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -43,14 +42,16 @@ a:hover {
 
 header {
   width: 100%;
-  border: 3px solid;
+  min-height: 850px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 header .navbar {
   display: flex;
   justify-content: space-between;
   font-size: 2rem;
   width: 100%;
-  border: 1px solid red;
 }
 header .navbar .wide-screen-menu ul {
   list-style: none;
@@ -96,6 +97,94 @@ header .navbar .collapsible-menu .menu-content .side-navigation li a {
 header .navbar .collapsible-menu input:checked ~ .menu-content {
   max-height: 100%;
 }
+header .festival {
+  height: 450px;
+  align-self: center;
+  text-align: center;
+  color: white;
+}
+header .festival h3 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+header .festival h1 {
+  font-size: 4rem;
+  margin-bottom: 4rem;
+}
+header .festival h2 {
+  margin-bottom: 2rem;
+}
+header .festival button {
+  padding: 10px 20px;
+  margin-top: 10rem;
+  font-size: 16px;
+  cursor: pointer;
+}
+header .festival #booking-form-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+header .festival #booking-form {
+  background-color: #fff;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+header .festival #booking-form .close-btn {
+  position: absolute;
+  color: black;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+header .festival #booking-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+header .festival #booking-form form label {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+header .festival #booking-form form input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+header .festival #booking-form form input:last-of-type {
+  width: 20%;
+}
+header .festival #booking-form form button[type=submit] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 1.5rem;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+header .festival #booking-form form button[type=submit]:hover {
+  background-color: #45a049;
+}
 
 @media screen and (min-width: 600px) {
   nav {
@@ -110,7 +199,6 @@ header .navbar .collapsible-menu input:checked ~ .menu-content {
   }
   .wide-screen-menu {
     width: 100%;
-    border: 1px solid;
   }
   .wide-screen-menu ul {
     display: flex;
@@ -121,9 +209,37 @@ header .navbar .collapsible-menu input:checked ~ .menu-content {
   }
 }
 main {
-  padding: 10%;
+  padding: 2%;
+}
+main .headline-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+main .headline-wrapper .stages {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #b8580c;
+  font-size: 2.4rem;
+}
+main .headline-wrapper .stages .main-stage {
+  width: 50%;
+  text-align: right;
+  padding-right: 4rem;
+}
+main .headline-wrapper .stages .second-stage {
+  width: 50%;
+  padding-left: 4rem;
 }
 
+@media screen and (min-width: 600px) {
+  .main-stage,
+  .second-stage {
+    font-size: 3.2rem;
+  }
+}
 .timetable {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -186,7 +302,7 @@ main {
   grid-area: 15/2;
 }
 
-.band-info:nth-of-type(2n+3):after {
+.band-info:nth-of-type(2n + 3):after {
   font-family: "Font Awesome 6 Free";
   content: "\f192";
   font-size: 2rem;
@@ -323,8 +439,17 @@ main {
   left: 15%;
 }
 
+.band-info:nth-of-type(15):before {
+  content: "11:00 - 12:00";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  left: 15%;
+}
+
 *:before {
-  text-shadow: 0 0 1px black, 0px 0px 15px whitesmoke;
+  text-shadow: 0 0 1px black, 0px 0px 20px whitesmoke;
 }
 
 /*# sourceMappingURL=main.css.map */

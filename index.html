@@ -41,15 +41,59 @@
             </ul>
           </div>
         </div>
-        
       </nav>
+
+      <section class="festival">
+        <h3>Somewhere, Nowhere, Anywhere - Earth</h3>
+        <h1>POSTROCK FESTIVAL</h1>
+        <h2>25 AUGUST 2024</h2>
+
+        <!-- here comes the "book tickets" form -->
+        <button id="book-tickets-btn">Book Tickets</button>
+
+        <div id="booking-form-overlay">
+          <div id="booking-form">
+            <span class="close-btn" onclick="closeBookingForm()">&times;</span>
+            <h2>Book Tickets</h2>
+            <form>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+      
+              <label for="address">Address:</label>
+              <input type="text" id="address" name="address" required>
+      
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+      
+              <label for="tickets">Number of Tickets:</label>
+              <input type="number" id="tickets" name="tickets" required>
+      
+              <button type="submit">Book Now!</button>
+            </form>
+          </div>
+        </div>
+      
+
+      </section>
     </header>
   </section>
   <section class="bg-section-center">
      <main>
+      <div class="headline-wrapper"> 
+        <div class="stages">
+        <div class="main-stage">Main Stage</div>
+        <div class="second-stage">Second Stage</div>
+      </div>
+    </div>
+     
       <section class="timetable">
        <div class="band-info"></div>
-       <div class="band-info"></div>
+       <div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <p><a href="">website of band</a></p>
+       </div>
        <div class="band-info"></div>
        <div class="band-info"></div>
        <div class="band-info"></div>
@@ -69,5 +113,6 @@
    <section class="bg-section-bottom">
     <footer></footer>
   </section>
+  <script src="./src/script.js"></script>
   </body>
 </html>
