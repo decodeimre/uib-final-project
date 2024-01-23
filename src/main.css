@@ -6,6 +6,7 @@
 
 :root {
   font-size: 10px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 body {
@@ -14,23 +15,41 @@ body {
   background: #8a680b;
 }
 
+a:hover {
+  text-shadow: 0px 0px 5px whitesmoke;
+}
+
 header {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  border: 3px solid;
 }
 header .navbar {
   display: flex;
-  font-size: 4rem;
-  width: 80%;
   justify-content: space-between;
+  font-size: 2rem;
+  width: 100%;
+  border: 1px solid red;
 }
-header .navbar a {
+header .navbar .wide-screen-menu ul {
+  list-style: none;
+}
+header .navbar .wide-screen-menu ul li a {
   text-decoration: none;
   color: black;
 }
+header .navbar .wide-screen-menu ul li:not(:first-child) {
+  display: none;
+}
+header .navbar .collapsible-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
 header .navbar .collapsible-menu label {
   cursor: pointer;
+}
+header .navbar .collapsible-menu label:hover {
+  text-shadow: 0px 0px 5px whitesmoke;
 }
 header .navbar .collapsible-menu input#menu {
   display: none;
@@ -39,23 +58,45 @@ header .navbar .collapsible-menu .menu-content {
   max-height: 0;
   overflow: hidden;
 }
+header .navbar .collapsible-menu .menu-content .side-navigation {
+  list-style: none;
+  text-transform: uppercase;
+  text-align: right;
+}
+header .navbar .collapsible-menu .menu-content .side-navigation li {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+header .navbar .collapsible-menu .menu-content .side-navigation li a {
+  text-decoration: none;
+  color: black;
+}
 header .navbar .collapsible-menu input:checked ~ .menu-content {
   max-height: 100%;
 }
 
-.top-navigation {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  list-style: none;
-  text-transform: uppercase;
+@media screen and (min-width: 600px) {
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+  .collapsible-menu label {
+    display: none;
+  }
+  .collapsible-menu .menu-content {
+    display: none;
+  }
+  .wide-screen-menu {
+    width: 100%;
+    border: 1px solid;
+  }
+  .wide-screen-menu ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  .wide-screen-menu ul li:not(:first-child) {
+    display: list-item !important;
+  }
 }
-.top-navigation li {
-  text-decoration: none;
-  color: black;
-  margin-top: 2rem;
-  font-size: 3rem;
-}
-.top-navigation li:nth-of-type(1) {
-  display: none;
-}/*# sourceMappingURL=main.css.map */
+
+/*# sourceMappingURL=main.css.map */

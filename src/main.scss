@@ -6,31 +6,50 @@
 
 :root {
   font-size: 10px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 body {
   min-height: 100vh;
   padding: 5rem;
   background: #8a680b;
- 
+}
+a:hover {
+  text-shadow: 0px 0px 5px whitesmoke;
 }
 
 header {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  border: 3px solid;
   .navbar {
     display: flex;
-    font-size: 4rem;
-    width: 80%;
     justify-content: space-between;
-    a {
-      text-decoration: none;
-      color: black;
+    font-size: 2rem;
+    width: 100%;
+    border: 1px solid red;
+
+    .wide-screen-menu {
+      ul {
+        list-style: none;
+        li a {
+          text-decoration: none;
+          color: black;
+        }
+        li:not(:first-child) {
+          display: none;
+        }
+      }
     }
+
     .collapsible-menu {
-        label {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      label {
         cursor: pointer;
+      }
+      label:hover {
+        text-shadow: 0px 0px 5px whitesmoke;
       }
       input#menu {
         display: none;
@@ -38,27 +57,51 @@ header {
       .menu-content {
         max-height: 0;
         overflow: hidden;
+        .side-navigation {
+          list-style: none;
+          text-transform: uppercase;
+          text-align: right;
+          li {
+            margin-top: 2rem;
+            font-size: 2rem;
+            a{
+              text-decoration: none;
+              color: black;
+            }
+          }
+        }
       }
-    //   menu displayed when checked
+      //   menu displayed when checked
       input:checked ~ .menu-content {
         max-height: 100%;
       }
     }
   }
 }
-.top-navigation {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  list-style: none;
-  text-transform: uppercase;
-  li {
-    text-decoration: none;
-    color: black;
-    margin-top: 2rem;
-    font-size: 3rem;
+
+@media screen and (min-width: 600px) {
+  nav {
+    display: flex;
+    justify-content: center;
   }
-  li:nth-of-type(1) {
-    display: none;
+  .collapsible-menu {
+    label {
+      display: none;
+    }
+    .menu-content {
+      display: none;
+    }
+  }
+  .wide-screen-menu {
+    width: 100%;
+    border: 1px solid;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      // something is in conflict with display, but works with !important
+      li:not(:first-child) {
+        display: list-item !important;
+      }
+    }
   }
 }

@@ -16,13 +16,23 @@
   <body>
     <header>
       <nav class="navbar">
-        <a href="#">HOME</a>
+        <!-- wide screen menu list horizontally -->
+        <div class="wide-screen-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Line-Up</a></li>
+            <li><a href="#">Tickets</a></li>
+            <li><a href="#">Info</a></li>
+        </ul>
+            
+        </div>
+        <!-- collapsible menu for small screen -->
         <div class="collapsible-menu">
             <input type="checkbox" id="menu">
             <label for="menu"><i class="fa-solid fa-bars"></i></label>
           <div class="menu-content">
-            <ul class="top-navigation">
-              <li><a href="#">Home</a></li>
+            <ul class="side-navigation">
               <li><a href="#">News</a></li>
               <li><a href="#">Line-Up</a></li>
               <li><a href="#">Tickets</a></li>
