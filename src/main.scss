@@ -11,11 +11,38 @@
 
 body {
   min-height: 100vh;
-  padding: 5rem;
-  background: #8a680b;
 }
+.bg-section-top {
+  min-height: 1000px;
+  padding: 5rem;
+  // background: linear-gradient(180deg, rgba (0,0,0,0) 0%, rgba (18,5,31,0.3) 80%, rgba (18,5,31,1) 100%);
+  background: url(../Images/concert-3084876_1920.jpg);
+  background-position: top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.bg-section-center {
+  min-height: 2000px;
+  padding: 5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 5, 31, 1) 0%,
+    rgba(255, 249, 233, 1) 100%
+  );
+}
+
+.bg-section-bottom {
+  min-height: 600px;
+  padding: 5rem;
+  background: url(../Images/29a3ca739f8347de51ca975401451b7a_RYAN8130-814-363-c.jpg);
+  background-position: bottom;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
 a:hover {
-  text-shadow: 0px 0px 5px whitesmoke;
+  text-shadow: 0px 0px 3px whitesmoke;
 }
 
 header {
@@ -49,7 +76,7 @@ header {
         cursor: pointer;
       }
       label:hover {
-        text-shadow: 0px 0px 5px whitesmoke;
+        text-shadow: 0px 0px 3px whitesmoke;
       }
       input#menu {
         display: none;
@@ -64,9 +91,9 @@ header {
           li {
             margin-top: 2rem;
             font-size: 2rem;
-            a{
-              text-decoration: none;
+            a {
               color: black;
+              text-shadow: 0 0 3px #f37602;
             }
           }
         }
@@ -104,4 +131,202 @@ header {
       }
     }
   }
+}
+
+main {
+  padding: 10%;
+}
+
+.timetable {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .band-info {
+    height: 200px;
+    position: relative;
+  }
+  .band-info:nth-child(even) {
+    border-right: 2px solid whitesmoke;
+    box-shadow: 2px 0px 0px whitesmoke;
+  }
+  .band-info:nth-child(odd) {
+    border-left: 2px solid whitesmoke;
+    box-shadow: -2px 0px 0px whitesmoke;
+  }
+  .band-info:nth-of-type(1) {
+    grid-area: 1 / 2;
+  }
+  .band-info:nth-of-type(2) {
+    grid-area: 2 / 1; 
+  }
+  .band-info:nth-of-type(3) {
+    grid-area: 3 / 2;
+  }
+  .band-info:nth-of-type(4) {
+    grid-area: 4 / 1;
+  }
+  .band-info:nth-of-type(5) {
+    grid-area: 5 / 2;
+  }
+  .band-info:nth-of-type(6) {
+    grid-area: 6 / 1;
+  }
+  .band-info:nth-of-type(7) {
+    grid-area: 7 / 2;
+  }
+  .band-info:nth-of-type(8) {
+    grid-area: 8 / 1;
+  }
+  .band-info:nth-of-type(9) {
+    grid-area: 9 / 2;
+  }
+  .band-info:nth-of-type(10) {
+    grid-area: 10 / 1;
+  }
+  .band-info:nth-of-type(11) {
+    grid-area: 11 / 2;
+  }
+  .band-info:nth-of-type(12) {
+    grid-area: 12 / 1;
+  }
+  .band-info:nth-of-type(13) {
+    grid-area: 13 / 2;
+  }
+  .band-info:nth-of-type(14) {
+    grid-area: 14 / 1;
+  }
+  .band-info:nth-of-type(15) {
+    grid-area: 15 / 2;
+  }
+}
+// time dot in timeline
+.band-info:nth-of-type(2n+3):after {
+  font-family: "Font Awesome 6 Free";
+  content: '\f192';
+  font-size: 2rem;
+  color: whitesmoke;
+  position: absolute;
+  top: -1.1rem;
+  left: -1.2rem;
+}
+.band-info:nth-of-type(even):after {
+  font-family: "Font Awesome 6 Free";
+  content: '\f192';
+  font-size: 2rem;
+  color: whitesmoke;
+  position: absolute;
+  top: -1.1rem;
+  right: -1.2rem;
+}
+
+// bands on the left side time positioned
+.band-info:nth-of-type(2):before {
+  content: "22:15 - 23:45";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  right: 15%;
+}
+.band-info:nth-of-type(4):before {
+  content: "20:15 - 21:30";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  right: 15%;
+}
+.band-info:nth-of-type(6):before {
+  content: "18:30 - 19:30";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  right: 15%;
+}
+.band-info:nth-of-type(8):before {
+  content: "17:00 - 18:00";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  right: 15%;
+}
+.band-info:nth-of-type(10):before {
+  content: "15:15 - 16:15";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  right: 15%;
+}
+.band-info:nth-of-type(12):before {
+  content: "13:45 - 14:45";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  right: 15%;
+}
+.band-info:nth-of-type(14):before {
+  content: "12:15 - 13:15";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  right: 15%;
+}
+// bands on the right side time positioned
+.band-info:nth-of-type(3):before {
+  content: "21:30 - 23:00";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  left: 15%;
+}
+.band-info:nth-of-type(5):before {
+  content: "19:00 - 20:00";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  left: 15%;
+}
+.band-info:nth-of-type(7):before {
+  content: "17:15 - 18:30";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  left: 15%;
+}
+.band-info:nth-of-type(9):before {
+  content: "15:30 - 16:30";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  left: 15%;
+}
+.band-info:nth-of-type(11):before {
+  content: "14:00 - 14:45";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  left: 15%;
+}
+.band-info:nth-of-type(13):before {
+  content: "12:30 - 13:30";
+  color: #f37602;
+  font-size: 2rem;
+  position: absolute;
+  top: -1.2rem;
+  left: 15%;
+}
+
+*:before {
+  text-shadow: 0 0 1px black, 0px 0px 15px whitesmoke; 
+
 }
