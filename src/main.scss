@@ -12,7 +12,7 @@
 body {
   min-height: 100vh;
 }
-.bg-section-top {
+#bg-section-top {
   min-height: 1000px;
   padding: 5rem;
   background: linear-gradient(
@@ -27,7 +27,8 @@ body {
   background-repeat: no-repeat;
 }
 
-.bg-section-center {
+#bg-section-center {
+  min-height: 800px;
   padding: 1.8rem;
   background: linear-gradient(
     180deg,
@@ -36,7 +37,7 @@ body {
   );
 }
 
-.bg-section-bottom {
+#bg-section-bottom {
   min-height: 800px;
   padding: 5rem;
   background: linear-gradient(
@@ -117,26 +118,22 @@ header {
     }
   }
   .festival {
-    height: 450px;
+    height: 650px;
     align-self: center;
     text-align: center;
     color: white;
+    // border: 1px solid white;
     h3 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 3rem;
     }
     h1 {
-      font-size: 4rem;
+      font-size: 4.5rem;
       margin-bottom: 4rem;
     }
     h2 {
+      font-size: 2rem;
       margin-bottom: 2rem;
-    }
-    button {
-      padding: 10px 20px;
-      margin-top: 10rem;
-      font-size: 16px;
-      cursor: pointer;
     }
 
     #booking-form-overlay {
@@ -188,7 +185,6 @@ header {
           border: 1px solid #ccc;
           border-radius: 4px;
           width: 100%;
-          box-sizing: border-box;
         }
         input:last-of-type {
           width: 20%;
@@ -212,31 +208,22 @@ header {
     }
   }
 }
-
-@media screen and (min-width: 600px) {
-  nav {
-    display: flex;
-    justify-content: center;
-  }
-  .collapsible-menu {
-    label {
-      display: none;
-    }
-    .menu-content {
-      display: none;
-    }
-  }
-  .wide-screen-menu {
-    width: 100%;
-    ul {
-      display: flex;
-      justify-content: space-around;
-      // something is in conflict with display, but works with !important
-      li:not(:first-child) {
-        display: list-item !important;
-      }
-    }
-  }
+// book tickets button
+button {
+  padding: 10px 20px;
+  font-size: 1.6rem;
+  cursor: pointer;  
+  background-color: transparent;  
+  border-radius: 20px 20px; 
+}
+#book-tickets-btn {
+  color: whitesmoke;
+  border: 2px solid whitesmoke;
+   margin-top: 10rem;
+}
+#book-tickets-btn:hover,
+#book-tickets-btn-two:hover {
+  font-size: 1.7rem;
 }
 
 main {
@@ -255,20 +242,13 @@ main {
       .main-stage {
         width: 50%;
         text-align: right;
-        padding-right: 4rem;
+        padding-right: 8%;
       }
       .second-stage {
         width: 50%;
-        padding-left: 4rem;
+        padding-left: 8%;
       }
     }
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .main-stage,
-  .second-stage {
-    font-size: 3.2rem;
   }
 }
 
@@ -278,15 +258,32 @@ main {
 
   .band-info {
     height: 200px;
+    
     position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    h2 {
+      font-size: 2.2rem;
+      color: whitesmoke;
+      margin-bottom: 1rem;
+    }
+    a {
+      font-size: 2rem;
+    }
   }
   .band-info:nth-child(even) {
+    padding: 5rem 15% 2rem 0;
     border-right: 2px solid whitesmoke;
     box-shadow: 2px 0px 0px whitesmoke;
+    align-items: end;
+    text-align: right;
   }
   .band-info:nth-child(odd) {
     border-left: 2px solid whitesmoke;
     box-shadow: -2px 0px 0px whitesmoke;
+    padding: 5rem 0 2rem 15%;
+    align-items: start;
   }
   .band-info:nth-of-type(1) {
     grid-area: 1 / 2;
@@ -472,4 +469,143 @@ main {
 
 *:before {
   text-shadow: 0 0 1px black, 0px 0px 20px whitesmoke;
+}
+
+#festival-infos {
+  display: none;
+  padding: 3rem;
+  h1 {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 10rem;
+  }
+}
+
+.location-instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .address-geo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke;
+    .address {
+      min-width: 100px;
+      min-height: 200px;
+      font-size: 1.5rem;
+    }
+    .geo {
+      min-height: 200px;
+      font-size: 1.5rem;
+    }
+  }
+  .drive {
+    min-width: 400px;
+    min-height: 200px;
+    text-align: center;
+    img {
+      max-width: 100%;
+    }
+  }
+  .festival-site {
+    margin-top: 5rem;
+    text-align: center;
+    area {
+      img {
+        max-width: 100%;
+      }
+    }
+  }  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: whitesmoke;
+  }
+}
+
+.festival-rules {
+  margin-top: 8rem;
+  h2 {
+    font-size: 3rem;
+  }
+  li {
+    padding: .5rem;
+    font-size: 2rem;
+  }
+}
+
+
+footer {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  #book-tickets-btn-two {
+    color: black;
+    width: 200px;
+    border: 2px solid black;
+  }
+}
+
+
+
+// media queries coming up
+@media screen and (min-width: 600px) {
+  .collapsible-menu {
+    label {
+      display: none;
+    }
+    .menu-content {
+      display: none;
+    }
+  }
+  .wide-screen-menu {
+    width: 100%;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      // something is in conflict with display, but works with !important
+      li:not(:first-child) {
+        display: list-item !important;
+      }
+    }
+  }
+  .main-stage,
+  .second-stage {
+    font-size: 3.2rem;
+  }
+  #festival-infos {
+    padding: 6rem;
+  }
+}
+@media screen and (min-width: 790px) {
+  header {
+    .navbar {
+      align-self: center;
+      width: 80%;
+    }
+  }
+  #festival-infos {
+    padding: 10rem;
+    .location-instructions {
+      .address-geo {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 950px) {
+  #festival-infos {
+    padding: 15rem;
+    .location-instructions {
+      .address-geo {
+        justify-content: space-around;
+      }
+    }
+  }
 }

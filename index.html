@@ -14,7 +14,7 @@
     <title>Document</title>
   </head>
   <body>
-    <section class="bg-section-top">
+    <section id="bg-section-top">
     <header>
       <nav class="navbar">
         <!-- wide screen menu list horizontally -->
@@ -22,9 +22,9 @@
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">News</a></li>
-            <li><a href="#">Line-Up</a></li>
+            <li><a href="#bg-section-center" class="line-up-btn">Line-Up</a></li>
             <li><a href="#">Tickets</a></li>
-            <li><a href="#">Info</a></li>
+            <li><a href="#bg-section-center" class="info-btn">Info</a></li>
         </ul>
             
         </div>
@@ -35,25 +35,24 @@
           <div class="menu-content">
             <ul class="side-navigation">
               <li><a href="#">News</a></li>
-              <li><a href="#">Line-Up</a></li>
+              <li><a href="#bg-section-center" class="line-up-btn">Line-Up</a></li>
               <li><a href="#">Tickets</a></li>
-              <li><a href="#">Info</a></li>
+              <li><a href="#bg-section-center" class="info-btn">Info</a></li>
             </ul>
           </div>
         </div>
       </nav>
-
-      <section class="festival">
+        <section class="festival">
         <h3>Somewhere, Nowhere, Anywhere - Earth</h3>
         <h1>POSTROCK FESTIVAL</h1>
-        <h2>25 AUGUST 2024</h2>
+        <h2 class="festival-date">25 AUGUST 2024</h2>
 
         <!-- here comes the "book tickets" form -->
         <button id="book-tickets-btn">Book Tickets</button>
 
         <div id="booking-form-overlay">
           <div id="booking-form">
-            <span class="close-btn" onclick="closeBookingForm()">&times;</span>
+            <span class="close-btn" onclick="closeBookingForm()"><i class="fa-solid fa-xmark"></i></span>
             <h2>Book Tickets</h2>
             <form>
               <label for="name">Name:</label>
@@ -65,8 +64,8 @@
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" required>
       
-              <label for="tickets">Number of Tickets:</label>
-              <input type="number" id="tickets" name="tickets" required>
+              <label for="tickets">Number of Tickets: (max 4)</label>
+              <input type="number" min="0" max="4" id="tickets" name="tickets" required>
       
               <button type="submit">Book Now!</button>
             </form>
@@ -77,41 +76,148 @@
       </section>
     </header>
   </section>
-  <section class="bg-section-center">
+  <section id="bg-section-center">
      <main>
+     <section id="line-up">
       <div class="headline-wrapper"> 
         <div class="stages">
-        <div class="main-stage">Main Stage</div>
-        <div class="second-stage">Second Stage</div>
+          <div class="main-stage">Main Stage</div>
+          <div class="second-stage">Second Stage</div>
+        </div>
       </div>
-    </div>
-     
-      <section class="timetable">
+    
+     <section class="timetable">
        <div class="band-info"></div>
        <div class="band-info">
         <h2>
           HEADLINER WOAHHH
         </h2>
-        <p><a href="">website of band</a></p>
-       </div>
-       <div class="band-info"></div>
-       <div class="band-info"></div>
-       <div class="band-info"></div>
-       <div class="band-info"></div>
-       <div class="band-info"></div>
-       <div class="band-info"></div>
-       <div class="band-info"></div>
-       <div class="band-info"></div>
-       <div class="band-info"></div>
-       <div class="band-info"></div>
-       <div class="band-info"></div>
-       <div class="band-info"></div>
-       <div class="band-info"></div> 
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+       </div><div class="band-info">
+        <h2>
+          HEADLINER WOAHHH
+        </h2>
+        <a href="">website of band</a>
+    </section>
+    </section>
 
+
+    <section id="festival-infos">
+      <h1>FESTIVAL INFOS</h1>
+      <div class="location-instructions">
+        <div class="address-geo">
+          <div class="address">
+            <h3>Address</h3>
+            <p>Some Area In The Woods</p>
+            <p>Wood Alley 69</p>
+            <p>12345 Inglewood</p>
+          </div>
+          <div class="geo">
+            <h3>GEO Coordinates</h3>
+            <p>61°18'39.9"N</p>
+            <p>10°49'18.6"E</p>
+          </div>
+        </div>
+        <div class="drive">
+          <h2>How to find us!</h2>
+          <img src="./Images/anfahrt.jpg" alt="">
+        </div>
+        <div class="festival-site">
+            <h2>Festival Area</h2>
+            <div class="area">
+              <img src="./Images/festival-site.jpg" alt="">
+            </div>
+        </div>
+      </div>
+        <div class="festival-rules">
+           <h2>Work Hard, Play Hard - OUR FESTIVAL RULES</h2> 
+            <ol>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident voluptates culpa quaerat!</li>
+              <li>Dolor explicabo saepe est animi dignissimos in vero laudantium nesciunt hic harum?</li>
+              <li>Eius quo consequatur necessitatibus vitae assumenda, distinctio fugit porro vel! Exercitationem, laudantium.</li>
+              <li>Quisquam ullam perferendis repudiandae odit vero. Quo ullam laborum fugit tempora delectus.</li>
+              <li>Expedita praesentium placeat cupiditate odio quisquam necessitatibus omnis dignissimos magnam provident dolor.</li>
+              <li>Magni aperiam quod at quidem perferendis ab error culpa. Quasi, unde doloremque!</li>
+              <li>Magni possimus minima amet quae nemo incidunt esse recusandae temporibus atque ipsum!</li>
+              <li>Magni perferendis ut deserunt quos sapiente doloribus reiciendis placeat itaque sequi assumenda?</li>
+              <li>Temporibus laboriosam sapiente, nostrum voluptatem optio magni quae placeat cupiditate explicabo fugit?</li>
+              <li>Quia sapiente rem porro officiis. Sunt, ad voluptates ipsum tenetur excepturi dolorum?</li>
+              <li>Tenetur est necessitatibus tempora ratione! Soluta atque voluptatibus at nemo fugiat quis.</li>
+              <li>Officiis quaerat quisquam ea? Esse culpa voluptas similique quisquam aperiam neque laudantium!</li>
+            </ol>
+          </div>
+          <div class="impressum"></div>
+         
+        </section>
      </main>
   </section>
-   <section class="bg-section-bottom">
-    <footer></footer>
+
+
+   <section id="bg-section-bottom">
+    <footer>
+      <button id="book-tickets-btn-two">Book Tickets</button>
+      <p><i class="fa-regular fa-copyright"></i> 2024 POSTROCK FESTIVAL. All rights reserved. <a href="#">Back to the top <i class="fa-solid fa-arrow-up"></i></a></p>
+    </footer>
   </section>
   <script src="./src/script.js"></script>
   </body>
