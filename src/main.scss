@@ -12,8 +12,12 @@
 body {
   min-height: 100vh;
 }
-#bg-section-top {
-  min-height: 1000px;
+
+a:hover {
+  text-shadow: 0px 0px 3px whitesmoke;
+}
+
+header {
   padding: 5rem;
   background: linear-gradient(
       to bottom,
@@ -25,40 +29,8 @@ body {
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-#bg-section-center {
-  min-height: 800px;
-  padding: 1.8rem;
-  background: linear-gradient(
-    180deg,
-    rgba(18, 5, 31, 1) 0%,
-    rgba(255, 249, 233, 1) 100%
-  );
-}
-
-#bg-section-bottom {
-  min-height: 800px;
-  padding: 5rem;
-  background: linear-gradient(
-      to top,
-      rgba(255, 249, 233, 0) 0%,
-      rgba(255, 249, 233, 0.5) 80%,
-      rgba(255, 249, 233, 1) 100%
-    ),
-    url(../Images/29a3ca739f8347de51ca975401451b7a_RYAN8130-814-363-c.jpg);
-  background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-a:hover {
-  text-shadow: 0px 0px 3px whitesmoke;
-}
-
-header {
   width: 100%;
-  min-height: 850px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -118,11 +90,9 @@ header {
     }
   }
   .festival {
-    height: 650px;
-    align-self: center;
+    height: 550px;
     text-align: center;
     color: white;
-    // border: 1px solid white;
     h3 {
       font-size: 2.5rem;
       margin-bottom: 3rem;
@@ -212,14 +182,14 @@ header {
 button {
   padding: 10px 20px;
   font-size: 1.6rem;
-  cursor: pointer;  
-  background-color: transparent;  
-  border-radius: 20px 20px; 
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 20px 20px;
 }
 #book-tickets-btn {
   color: whitesmoke;
   border: 2px solid whitesmoke;
-   margin-top: 10rem;
+  margin-top: 10rem;
 }
 #book-tickets-btn:hover,
 #book-tickets-btn-two:hover {
@@ -227,7 +197,14 @@ button {
 }
 
 main {
+  min-height: 800px;
   padding: 2%;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 5, 31, 1) 0%,
+    rgba(255, 249, 233, 1) 100%
+  );
+
   .headline-wrapper {
     width: 100%;
     display: flex;
@@ -251,18 +228,18 @@ main {
     }
   }
 }
-
+// line-up timetable
 .timetable {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
   .band-info {
     height: 200px;
-    
+
     position: relative;
     display: flex;
     flex-direction: column;
-    
+
     h2 {
       font-size: 2.2rem;
       color: whitesmoke;
@@ -272,6 +249,8 @@ main {
       font-size: 2rem;
     }
   }
+
+  // position: of Bandinfo Divs
   .band-info:nth-child(even) {
     padding: 5rem 15% 2rem 0;
     border-right: 2px solid whitesmoke;
@@ -352,119 +331,66 @@ main {
 }
 
 // bands on the left side time positioned
-.band-info:nth-of-type(2):before {
-  content: "22:15 - 23:45";
+
+.band-info:nth-of-type(even):before {
+  content: "";
   color: #f37602;
   font-size: 2rem;
   position: absolute;
   top: -1.2rem;
   right: 15%;
+}
+.band-info:nth-of-type(2):before {
+  content: "22:15 - 23:45";
 }
 .band-info:nth-of-type(4):before {
   content: "20:15 - 21:30";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  right: 15%;
 }
 .band-info:nth-of-type(6):before {
   content: "18:30 - 19:30";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  right: 15%;
 }
 .band-info:nth-of-type(8):before {
   content: "17:00 - 18:00";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  right: 15%;
 }
 .band-info:nth-of-type(10):before {
   content: "15:15 - 16:15";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  right: 15%;
 }
 .band-info:nth-of-type(12):before {
   content: "13:45 - 14:45";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  right: 15%;
 }
 .band-info:nth-of-type(14):before {
   content: "12:15 - 13:15";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  right: 15%;
 }
 // bands on the right side time positioned
-.band-info:nth-of-type(3):before {
-  content: "21:30 - 23:00";
+
+.band-info:nth-of-type(2n + 3):before {
+  content: "";
   color: #f37602;
   font-size: 2rem;
   position: absolute;
   top: -1.2rem;
   left: 15%;
+}
+.band-info:nth-of-type(3):before {
+  content: "21:30 - 23:00";
 }
 .band-info:nth-of-type(5):before {
   content: "19:00 - 20:00";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  left: 15%;
 }
 .band-info:nth-of-type(7):before {
   content: "17:15 - 18:30";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  left: 15%;
 }
 .band-info:nth-of-type(9):before {
   content: "15:30 - 16:30";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  left: 15%;
 }
 .band-info:nth-of-type(11):before {
   content: "14:00 - 14:45";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  left: 15%;
 }
 .band-info:nth-of-type(13):before {
   content: "12:30 - 13:30";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  left: 15%;
 }
-
 .band-info:nth-of-type(15):before {
   content: "11:00 - 12:00";
-  color: #f37602;
-  font-size: 2rem;
-  position: absolute;
-  top: -1.2rem;
-  left: 15%;
 }
 
 *:before {
@@ -473,7 +399,7 @@ main {
 
 #festival-infos {
   display: none;
-  padding: 3rem;
+  padding: 10rem;
   h1 {
     font-size: 3rem;
     color: white;
@@ -483,6 +409,7 @@ main {
 }
 
 .location-instructions {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -503,7 +430,7 @@ main {
     }
   }
   .drive {
-    min-width: 400px;
+    min-width: 350px;
     min-height: 200px;
     text-align: center;
     img {
@@ -513,12 +440,14 @@ main {
   .festival-site {
     margin-top: 5rem;
     text-align: center;
+
     area {
+      min-width: 350px;
       img {
         max-width: 100%;
       }
     }
-  }  
+  }
   h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
@@ -532,45 +461,78 @@ main {
     font-size: 3rem;
   }
   li {
-    padding: .5rem;
+    padding: 0.5rem;
     font-size: 2rem;
   }
 }
 
-
 footer {
+  min-height: 800px;
+  padding: 5rem;
+  background: linear-gradient(
+      to top,
+      rgba(255, 249, 233, 0) 0%,
+      rgba(255, 249, 233, 0) 50%,
+      rgba(255, 249, 233, 0.8) 80%,
+      rgba(255, 249, 233, 1) 100%
+    ),
+    url(../Images/29a3ca739f8347de51ca975401451b7a_RYAN8130-814-363-c.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   display: flex;
-  height: 100%;
+  height: 80vh;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   #book-tickets-btn-two {
+    margin-top: 5rem;
     color: black;
     width: 200px;
     border: 2px solid black;
   }
+  .footnote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    p {
+      color: whitesmoke;
+      text-shadow: 0 0 5px black;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: whitesmoke;
+      font-size: 1.5rem;
+      text-shadow: 0 0 5px black;
+    }
+  }
 }
-
-
 
 // media queries coming up
 @media screen and (min-width: 600px) {
-  .collapsible-menu {
-    label {
-      display: none;
-    }
-    .menu-content {
-      display: none;
-    }
-  }
-  .wide-screen-menu {
-    width: 100%;
-    ul {
-      display: flex;
-      justify-content: space-around;
-      // something is in conflict with display, but works with !important
-      li:not(:first-child) {
-        display: list-item !important;
+  header {
+    .navbar {
+      .collapsible-menu {
+        label {
+          display: none;
+        }
+        .menu-content {
+          display: none;
+        }
+      }
+      .wide-screen-menu {
+        width: 100%;
+        ul {
+          display: flex;
+          justify-content: space-around;
+          // something is in conflict with display, but works with !important
+          li:not(:first-child) {
+            display: list-item;
+          }
+        }
       }
     }
   }
@@ -595,6 +557,21 @@ footer {
       .address-geo {
         width: 90%;
       }
+    }
+  }
+  footer .footnote {
+    flex-direction: row;
+    flex-wrap: wrap;
+    p {
+      color: whitesmoke;
+      text-shadow: 0 0 5px black;
+      font-size: 2rem;
+      margin-left: 0.5rem;
+    }
+    a {
+      color: whitesmoke;
+      font-size: 2rem;
+      text-shadow: 0 0 5px black;
     }
   }
 }
