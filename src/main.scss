@@ -83,7 +83,7 @@ header {
           }
         }
       }
-      //   menu displayed when checked
+      //   menu displayed when checked - javascript would have been easier, but found that solution interesting
       input:checked ~ .menu-content {
         max-height: 100%;
       }
